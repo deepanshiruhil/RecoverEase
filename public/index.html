@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lost and Found Management System</title>
+    <style>
+        body {
+            font-family: serif;
+            margin: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid black;
+            padding-bottom: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 2px solid black;
+        }
+        th, td {
+            padding: 5px 10px;
+            text-align: left;
+        }
+        section {
+            margin-bottom: 25px;
+        }
+        label {
+            display: inline-block;
+            width: 140px;
+            margin-top: 8px;
+        }
+        input, select, button {
+            margin-top: 8px;
+        }
+        button {
+            padding: 4px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Initialize Database -->
+<section>
+    <h2>Initialize Database</h2>
+    <button>Initialize Database</button>
+</section>
+
+<!-- User Registration -->
+<section>
+    <h2>User Registration</h2>
+    <label>Name:</label><input type="text"><br>
+    <label>Email:</label><input type="email"><br>
+    <label>Phone:</label><input type="text"><br>
+    <label>Role:</label><input type="text"><br>
+    <button>Register</button>
+</section>
+
+<!-- Categories -->
+<section>
+    <h2>Categories</h2>
+    <table>
+        <tr><th>Category ID</th><th>Category Name</th></tr>
+        <tr><td>1</td><td>Electronics</td></tr>
+        <tr><td>2</td><td>Clothing</td></tr>
+        <tr><td>3</td><td>Accessories</td></tr>
+        <tr><td>4</td><td>Stationery</td></tr>
+        <tr><td>5</td><td>Keys</td></tr>
+    </table>
+</section>
+
+<!-- Locations -->
+<section>
+    <h2>Locations</h2>
+    <table>
+        <tr>
+            <th>Location ID</th>
+            <th>Building Code</th>
+        </tr>
+        <tr><td>1</td><td>ECE</td></tr>
+        <tr><td>2</td><td>IT</td></tr>
+        <tr><td>3</td><td>EXAM DIVISION</td></tr>
+        <tr><td>4</td><td>ARCHITECTURE</td></tr>
+        <tr><td>5</td><td>MANAGEMENT</td></tr>
+        <tr><td>6</td><td>PLACEMENT</td></tr>
+    </table>
+</section>
+
+<!-- Report Lost Item -->
+<section>
+    <h2>Report Lost Item</h2>
+    <label>Description:</label><input type="text"><br>
+    <label>Category ID:</label><input type="number"><br>
+    <label>Location ID:</label><input type="number"><br>
+    <label>User ID:</label><input type="number"><br>
+    <button>Report Lost Item</button>
+</section>
+
+<!-- Report Found Item -->
+<section>
+    <h2>Report Found Item</h2>
+    <label>Description:</label><input type="text"><br>
+    <label>Category ID:</label><input type="number"><br>
+    <label>Location ID:</label><input type="number"><br>
+    <label>User ID:</label><input type="number"><br>
+    <button>Report Found Item</button>
+</section>
+
+<!-- Lost Items -->
+<section>
+    <h2>Lost Items</h2>
+    <button>Fetch Lost Items</button>
+    <table>
+        <tr>
+            <th>ItemID</th>
+            <th>Description</th>
+            <th>DateReported</th>
+            <th>CategoryName</th>
+            <th>StatusDescription</th>
+            <th>LocationID</th>
+        </tr>
+    </table>
+</section>
+
+<!-- Found Items -->
+<section>
+    <h2>Found Items</h2>
+    <button>Fetch Found Items</button>
+    <table>
+        <tr>
+            <th>ItemID</th>
+            <th>Description</th>
+            <th>DateReported</th>
+            <th>CategoryName</th>
+            <th>StatusDescription</th>
+            <th>LocationID</th>
+        </tr>
+    </table>
+</section>
+
+<!-- Claim Item -->
+<section>
+    <h2>Claim Item</h2>
+    <label>User ID:</label><input type="number"><br>
+    <label>Item ID:</label><input type="number"><br>
+    <button>Claim Item</button>
+</section>
+
+<!-- Claim Table -->
+<section>
+    <h2>Claim Table</h2>
+    <button>Fetch Claim Table</button>
+    <table>
+        <tr>
+            <th>ClaimID</th>
+            <th>UserID</th>
+            <th>UserName</th>
+            <th>ItemID</th>
+            <th>ItemDescription</th>
+            <th>ClaimDate</th>
+        </tr>
+    </table>
+</section>
+
+<!-- Delete Report -->
+<section>
+    <h2>Delete Report</h2>
+    <label>User ID:</label><input type="number"><br>
+    <label>Item ID:</label><input type="number"><br>
+    <button>Delete Report</button>
+</section>
+
+<!-- Update Item -->
+<section>
+    <h2>Update Item</h2>
+    <label>Select Item:</label>
+    <select></select><br>
+    <label>New Description:</label><input type="text"><br>
+    <label>New Category ID:</label><input type="number"><br>
+    <label>New Status ID:</label><input type="number"><br>
+    <label>New Location ID:</label><input type="number"><br>
+    <button>Update Item</button>
+</section>
+
+<!-- Search Items -->
+<section>
+    <h2>Search Items</h2>
+    <button>Add Condition</button><br><br>
+    Logic between conditions:
+    <input type="radio" name="logic" checked> AND
+    <input type="radio" name="logic"> OR<br><br>
+    <button>Search</button>
+</section>
+
+<!-- View Selected Attributes -->
+<section>
+    <h2>View Items with Selected Attributes</h2>
+    <input type="checkbox" checked> ItemID<br>
+    <input type="checkbox" checked> Description<br>
+    <input type="checkbox"> DateReported<br>
+    <input type="checkbox"> CategoryID<br>
+    <input type="checkbox"> StatusID<br>
+    <input type="checkbox"> LocationID<br><br>
+    <button>Get Items</button>
+</section>
+
+<!-- Lost Items Count -->
+<section>
+    <h2>Lost Items Count Per Category</h2>
+    <button>Get Lost Items Count</button>
+    <table>
+        <tr>
+            <th>CategoryName</th>
+            <th>LostItemCount</th>
+        </tr>
+    </table>
+</section>
+
+<!-- Categories Over Threshold -->
+<section>
+    <h2>Categories with Lost Items Over Threshold</h2>
+    <label>Threshold:</label><input type="number"><br>
+    <button>Get Categories</button>
+    <table>
+        <tr>
+            <th>CategoryName</th>
+            <th>LostItemCount</th>
+        </tr>
+    </table>
+</section>
+
+<!-- Top Category Per Building -->
+<section>
+    <h2>Top Category Per Building</h2>
+    <button>Get Top Categories</button>
+    <table>
+        <tr>
+            <th>BuildingName</th>
+            <th>CategoryName</th>
+            <th>ItemCount</th>
+        </tr>
+    </table>
+</section>
+
+<!-- Users Reporting All Categories -->
+<section>
+    <h2>Users Reporting All Categories</h2>
+    <button>Get Users</button>
+    <table>
+        <tr>
+            <th>UserID</th>
+            <th>Name</th>
+        </tr>
+    </table>
+</section>
+
+</body>
+</html>
