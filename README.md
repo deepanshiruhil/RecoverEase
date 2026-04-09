@@ -10,7 +10,6 @@ This project has the primary objective to design and implement a comprehensive L
 - Technology Stack
 - Introduction
 
-
 # Project Description
 The Lost and Found Management System streamlines the entire process of managing lost and found items on campus. It enables users to report and track lost items, log found items, and receive automated notifications when a potential match is identified based on shared attributes like item description and location. By leveraging advanced database operations and a responsive design, the system enhances the efficiency of traditional methods, reducing the time required to reunite items with their rightful owners.
 
