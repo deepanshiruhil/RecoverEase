@@ -6,7 +6,6 @@ const router = express.Router();
 
 // ----------------------------------------------------------
 // API endpoints
-
 // Initialize Database
 router.post('/initialize-database', async (req, res) => {
     const result = await appService.initializeDatabase();
